@@ -135,12 +135,10 @@ def obscured_ip(ip):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='IP deobfuscator')
-    parser.add_argument('--ip',
-                        dest='ip',
-                        help='Obfuscated IP of any valid value (e.g.'
-                        ' \'0xd83ad424\')')
+    parser.add_argument('ip_address', help='Obfuscated IP of any valid value (e.g.'
+    ' \'0xd83ad424\')')
     args = parser.parse_args()
-    if args.ip:
-        obscured_ip(args.ip)
+    if args.ip_address:
+        obscured_ip(args.ip_address)
     else:
         parser.print_help()
